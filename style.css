@@ -7,26 +7,29 @@
 */
 :root {
   /* Core colours */
-  /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
-  --colour-amaranth: #e63946;
-  --colour-peppermint: #f1faee;
-  --colour-aquaisland: #a8dadc;
-  --colour-wedgewood: #457b9d;
-  --colour-cello: #1d3557;
+  /* https://coolors.co/24282f-15161b-3258cc-99ace6-ffffff-ec1e1e */
+  --colour-red-CMYK: #EC1E1E;
+  --colour-white: #FFFFFF;
+  --colour-byzantine-blue: #3258CC;
+  --colour-raisin-black: #24282F;
+  --colour-night: #15161B;
+  --colour-cadet-grey: #A0A5B5;
 
-  /* Header configuration */
-  --header-heading-colour: var(--colour-peppermint);
+  --body-default-colour: var(--colour-white);
+  --body-background-colour: var(--colour-raisin-black);
+}
 
-  /* Body configuration */
-  --body-default-colour: var(--colour-cello);
-  --body-background-colour: var(--colour-peppermint);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Arial;
 }
 
 /*
   PAGE / BODY
 */
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
   color: var(--body-default-colour);
   background-color: var(--body-background-colour);
 }
@@ -35,13 +38,120 @@ main {
   min-height: 100vh;
 
   display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
   justify-content: center;
-  align-items: center;
+}
+
+main h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--colour-red-CMYK);
+  margin-bottom: 1rem;
+}
+
+#new-reminder-form {
+  display: flex;
+}
+
+input, button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+#new-reminder-input {
+  flex: 1 1 0;
+  background-color: var(--colour-night);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  color: var(--colour-cadet-grey);
+  font-size: 1.25rem;
+}
+
+#new-reminder-input::placeholder {
+  color: var(--colour-cadet-grey);
+}
+
+#new-reminder-submit {
+  color: var(--colour-raisin-black);
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: var(--colour-red-CMYK);
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 10rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#new-reminder-submit:hover {
+  opacity: 0.6;
+}
+
+#new-reminder-submit:active {
+  opacity: 0.2;
+}
+
+.reminder-list {
+  margin-top: 1rem;
+}
+
+#reminders .reminder {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--colour-night);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+#reminders .reminder .content .text {
+  color: var(--colour-white);
+  font-size: 1.125rem;
+  width: 100%;
+  display: block;
+  transition: 0.4s;
+}
+
+#reminders .reminder .actions {
+  display: flex;
+  margin: 0 -0.5rem;
+}
+
+.reminder .actions button {
+  cursor: pointer;
+  margin: 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
+
+.reminder .actions button:hover {
+  opacity: 0.6;
+}
+
+.reminder .actions button:active {
+  opacity: 0.2;
+}
+
+.reminder .actions .delete {
+  color: var(--colour-white);
 }
 
 /*
   Screen reader text utility class
 */
+
 .sr-only {
   position: absolute;
   width: 1px;
