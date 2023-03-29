@@ -20,15 +20,16 @@ function addReminderItem(e)
 {
   
   e.preventDefault();
+
   const rName = reminderName.value;
    const rNull = rName === '';
 if (rNull) 
 {
-     alert("Please write a reminder")
+     alert("Please write a reminder!")
 }
 else 
 {  
- reminders.push(rName);
+  reminders.push(rName);
   renderList(reminders, reminderList);
   reminderForm.reset();
 }
@@ -47,11 +48,12 @@ function renderList(items, itemsList)
     const listItem = document.createElement("li");
     listItem.textContent = items[i];
 
-    const rDelete = document.createElement('button');
-    rDelete.innerHTML = "<img src='images/Trash.png' width= 25px>";
-    listItem.appendChild(rDelete);
+    const rDelete = document.createElement("button");
+    rDelete.innerHTML = "<img src='images/Trash.png' width=20px/>"
 
     rDelete.style.cursor = "pointer";
+
+    listItem.appendChild(rDelete);
 
    if (i === items.length - 1) 
     {
@@ -64,5 +66,3 @@ function renderList(items, itemsList)
 reminderForm.addEventListener("submit", addReminderItem);
 
 renderList(reminders, reminderList);
-
-
