@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <!-- Set the page title -->
-    <title>Assignment 03</title>
+    <title>Reminders</title>
 
     <!-- Set the charset we're using to UTF-8 -->
     <meta charset="UTF-8" />
@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="style.css" />
 
     <!-- Set the Favicon  -->
-    <link rel="icon" href="./images/favicon/rocket.svg" type="image/svg+xml" />
+    <link rel="icon shortcut" href="images/check.png">
+
   </head>
   <body>
     <!--
@@ -36,8 +37,30 @@
 
     -->
     <main>
-      <div id="app"></div>
+      <h1>Reminders</h1>
+
+      <form class="add-reminder">
+        <input
+          type="text"
+          id="new-reminder-input"
+          placeholder="New Reminder"
+        />
+        <input 
+          type="submit" 
+          id="new-reminder-submit"
+          value="+" 
+          />
+      </form>
+
+      <ul class="reminder-list">
+        <li>New Reminder</li>
+      </ul>
     </main>
+    
+    <footer>
+      <img class="footer--logo" src="images/logo.png" alt="Logo of game"/>
+      <p>© Copyright 2018-2023, Dead by Design. All Rights Reserved</p>
+    </footer>
 
     <!-- This is where we add our awesome JavaScript code -->
     <script src="./main.js"></script>

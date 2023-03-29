@@ -7,10 +7,9 @@
 */
 :root {
   /* Core colours */
-  /* https://coolors.co/24282f-15161b-3258cc-99ace6-ffffff-ec1e1e */
+  /* https://coolors.co/24282f-15161b-a0a5b5-ffffff-ec1e1e */
   --colour-red-CMYK: #EC1E1E;
   --colour-white: #FFFFFF;
-  --colour-byzantine-blue: #3258CC;
   --colour-raisin-black: #24282F;
   --colour-night: #15161B;
   --colour-cadet-grey: #A0A5B5;
@@ -28,6 +27,7 @@
 /*
   PAGE / BODY
 */
+
 
 body {
   color: var(--body-default-colour);
@@ -51,10 +51,6 @@ main h1 {
   font-weight: 700;
   color: var(--colour-red-CMYK);
   margin-bottom: 1rem;
-}
-
-#new-reminder-form {
-  display: flex;
 }
 
 input, button {
@@ -105,48 +101,59 @@ input, button {
   margin-top: 1rem;
 }
 
-#reminders .reminder {
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--colour-night);
+main ul.reminder-list {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+main ul.reminder-list li {
   padding: 1rem;
   border-radius: 1rem;
-  margin-bottom: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  background-color: var(--colour-night);
+  text-align: left;
+  font-size: 1.25rem;
+  transition: all;
 }
 
-#reminders .reminder .content .text {
-  color: var(--colour-white);
-  font-size: 1.125rem;
-  width: 100%;
+@keyframes add-new-item-annimation {
+  from {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.new-item-annimate {
+  transform-origin: 10% 0;
+  animation: add-new-item-annimation 0.3s linear;
+}
+
+/* 
+footer section
+*/
+
+footer {
+  padding: 0 0 2rem 0;
+  background-color: var(--colour-night);
+  color: #ffffff;
+  text-align: center;
+}
+
+.footer--logo {
   display: block;
-  transition: 0.4s;
+  width: 100px;
+  padding: 2rem 0rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--colour-night);
 }
 
-#reminders .reminder .actions {
-  display: flex;
-  margin: 0 -0.5rem;
-}
-
-.reminder .actions button {
-  cursor: pointer;
-  margin: 0 0.5rem;
-  font-size: 1.125rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  transition: 0.4s;
-}
-
-.reminder .actions button:hover {
-  opacity: 0.6;
-}
-
-.reminder .actions button:active {
-  opacity: 0.2;
-}
-
-.reminder .actions .delete {
-  color: var(--colour-white);
-}
 
 /*
   Screen reader text utility class
